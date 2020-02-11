@@ -1,0 +1,71 @@
+*{
+margin:0px;
+padding: 0px;
+}
+.main{
+display: block;
+width: 53%;
+margin:auto;
+
+}
+.head{
+background-color: #2CD4BC;
+}
+img{
+	height:150px;
+	width:150px;
+position:absolute;
+display:block;
+margin-top:20px;
+}
+.Donation{
+line-height: 200px;
+margin-left: 30%;
+color: white;
+font-size: 40px;
+font-weight: bold;
+}
+.body{
+background-color: #CCFFFF;
+padding: 25px;
+}
+.input-width{
+width: 300px;
+}
+.m11-left{
+margin-left: 50px;
+}
+.opacity{
+opacity: 0.3;
+}
+.width-full{
+width: 655px;
+}
+.text-box{
+width: 655px;
+height: 150px;
+}
+.btn{
+width: 120px;
+height: 40px;
+color: black;
+font-weight: bold;
+font-size:20px;
+margin-left: 40%;
+border:1px solid green;
+
+}
+.table-div{
+margin-top: 20px;
+}
+.input
+{
+height: 25px;
+border-radius: 5px;
+border: 1px solid gray;
+}
+
+.re:after{
+	content:"*";
+	color:red;
+}

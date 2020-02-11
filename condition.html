@@ -1,0 +1,40 @@
+<html>
+<head>
+
+
+<script>
+
+function condition()
+{
+var x=document.getElementById("abc").value;
+var x2="com";
+if( x == ""){
+alert("cannot be null");
+return false;
+}
+if(x.search(x2)==-1)
+{
+alert("com not found");
+return false;
+}
+
+
+}
+
+
+</script>
+
+
+</head>
+<body>
+
+
+<form>
+<label>
+enter text</label>
+<input type="text" name="fname" id="abc" value="">
+<input type="submit" value="submit" name="submit" onclick="return condition()">
+
+</form>
+</body>
+</html>

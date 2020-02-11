@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Dynamically add/remove items from list - JavaScript</title>
+</head>
+<body>
+
+    <ul id="dynamic-list"></ul>
+
+    <input type="text" id="candidate"/>
+    <button onclick="addItem()">add item</button>
+    <button onclick="removeItem()">remove item</button>
+
+    <script>
+    function addItem(){
+    var ul = document.getElementById("dynamic-list");
+    var candidate = document.getElementById("candidate");
+    var li = document.createElement("li");
+    li.setAttribute('id',candidate.value);
+    li.appendChild(document.createTextNode(candidate.value));
+    ul.appendChild(li);
+         document.getElementById('candidate').value = '';
+        
+}
+
+function removeItem(){
+    var ul = document.getElementById("dynamic-list");
+    var candidate = document.getElementById("candidate");
+    var item = document.getElementById(candidate.value);
+    ul.removeChild(item);
+    document.getElementById('candidate').value = '';
+}
+    </script>
+    
+   
+       
+    
+</body>
+    
+</html>

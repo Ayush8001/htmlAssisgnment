@@ -1,0 +1,110 @@
+package com.cts;
+
+import java.util.Scanner;
+
+public class Account {
+
+	private int accountId;
+
+	private String name;
+
+	private double bal;
+
+	public void setAccount() {
+		Scanner sc = new Scanner(System.in);
+
+		accountId = sc.nextInt();
+		name = sc.next();
+		bal = sc.nextDouble();
+	}
+
+	public void getAccount() {
+		System.out.println("Id=" + accountId + " " + "Name=" + name + " " + "balance=" + bal);
+
+	}
+	
+	public Account getDetailById(int accountId)
+	{
+		
+		
+			if(this.accountId==accountId)
+				return this;
+		
+		return null;
+	}
+	
+	public Account getDetailByName(String name)
+	{
+		if(this.name.equals(name))
+			return this;
+		return null;
+	}
+	
+	public Account withdraw(double amount)
+	{
+		if(amount>0)
+		{
+			if(amount%100==0)
+			{
+				this.bal-=amount;
+				System.out.println("Withdraw SucssFully...!!!");
+				return this;
+				
+			}
+			else
+			{
+				System.out.println("Plzz Enter Amount In Multiple Of 100");
+				return null;
+			}
+		}
+		else
+		{
+			System.out.println("Amount Can't Be Empty..!!");
+			return null;
+		}
+		
+		
+	}
+	
+	public Account deposit(double amount)
+	{
+		if(amount>0)
+		{
+			this.bal+=amount;
+			System.out.println("Desposite SucessFully..!!!");
+			return this;
+		}
+		else
+		{
+			System.out.println("Desposite Unsucessfull...!!!");
+			return null;
+		}
+	}
+	
+	public boolean transfer(Account acc,double amount)
+	{
+		if(amount<0)
+		{
+			System.out.println("Plzz  vaild Amount not negative");
+			return false;
+		}
+		else if(amount>0)
+		{
+			if(amount%100!=0)
+			{
+				System.out.println("Plzz Enter Amount in multiple of 100");
+				return false;
+			}
+			else
+			{
+				this.bal-=amount;
+				acc.bal+=amount;
+				System.out.println("Transfer SucessFull");
+				return true;
+			}
+		}
+	 return false;
+	}
+		
+	
+}

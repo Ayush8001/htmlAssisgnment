@@ -1,0 +1,63 @@
+
+<html>
+<head>
+<style>
+
+table, tr, td 
+tr, td {
+  padding: 5px;
+}
+tr {
+  text-align: left;
+}
+</style>
+</head>
+<body>
+
+<h2>Personal Information</h2>
+
+<form>
+<table style="width:40%">
+ <tr><td> <label for="name" >Name:</label> </td>
+  <td><input type="text" name="firstname" id="name"></td></tr>
+   <tr><td><label for="sex">Sex: </label></td>
+  <td><input type="radio" name="sex" value="male" id="sex" checked> Male
+  <input type="radio" name="sex" value="female" id="sex"> Female </td> </tr>
+ 
+  <tr> <td><label for="hme">Hometown :</label> </td>
+   <td><select name="home" id="hme">
+    <option value="new delhi">New Delhi</option>
+    <option value="hindustan">Hindstan</option>
+    <option value="english">england</option>
+    <option value="urdu">jamica</option>
+  </select></td></tr>
+ 
+ 
+ 
+  <tr><td><label for="address">Address: </label></td>
+<td><textarea name="message" rows="5" cols="20" id="address"></textarea></td></tr>
+ 
+ 
+ 
+ 
+ 
+  <tr><td><label for="skills">Skills:</label> </td>
+  <td>Java<input type="checkbox" name="hobbie1" value="Java" id="skills">
+  HTML<input type="checkbox" name="hobbie2" value="HTML">
+   Oracle<input type="checkbox" name="hobbie3" value="Oracle"></td></tr>
+   
+   <tr><td><label for="psw"> Password:</label> </td>
+  <td><input type="password" name="password" id="psw"></td></tr>
+ 
+  <tr><td>  </td>
+  <td><input type="submit" value="Submit" ></td></tr>
+ 
+  </table>
+ 
+</form>
+
+
+
+
+</body>
+</html>

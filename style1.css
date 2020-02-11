@@ -1,0 +1,52 @@
+*{
+    overflow: hidden;
+}
+
+#header{
+    background-color:#2CD4BB;
+		align:center;
+    color: #fff;
+
+}
+
+#header img {
+    float: left;
+    width: 50px;
+    height: 50px;
+    padding: 20px;
+    padding-left: 80px;
+	
+  }
+  
+  #header h1 {
+    position: relative;
+    top: 18px;
+    left: 10px;
+    padding: 20PX;
+    padding-top: 20PX;
+    text-align: center;
+  }
+
+  #myForm{
+      background-color: #D5EEF3;
+      height: 100vh;
+  }
+
+
+
+.form label,input{
+    font-size: 16px;
+    margin-top: 15px;
+    border-radius: 5px;
+    
+    
+}
+
+
+
+.Form label:after {
+    padding-left: 5px;
+    content: "*";
+    color: red;
+}
+

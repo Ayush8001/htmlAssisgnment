@@ -1,0 +1,34 @@
+*{
+margin :0px;
+padding: 0px;
+
+
+}
+.header{
+	
+	background-color: rgb(51, 255, 119);
+	padding:30px;
+	
+	text-align: center;
+	color: white;
+	margin-left: 300px;
+	margin-right: 300px;
+
+}
+.image{
+	float: left;
+
+}
+.align{
+	margin-top: 40px;
+	margin-left: 300px;
+	margin-right: 60px;
+
+}
+#text{
+	width:30%;
+
+}
+#text2{
+	width:30%;
+}

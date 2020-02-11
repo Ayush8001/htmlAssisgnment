@@ -1,0 +1,61 @@
+<html>
+<head>
+
+
+<title>JavaScript form validation - checking email</title>
+<link rel='stylesheet' href='form-style.css' type='text/css' />     
+<script type="text/javascript">
+function validate()
+{	
+	
+var e=document.getElementById("email").value;
+			var atIndex=e.indexOf('@');
+			var dotIndex=e.lastIndexOf('.');
+
+
+
+
+	var password=document.getElementById('pass').value;
+	var email=document.getElementById('email').value;
+	
+	if(password==""||password==null)
+	{	
+		alert('enter password');
+		return false;
+	}
+	if(password.length<3 || password.length>15)
+	{
+	alert("password not correct");
+	return false;
+	}	
+	if(email.match(mailformat))
+	{	
+		alert('match ho gya');
+		return false;
+	}
+}
+
+
+</script> 
+</head>
+
+
+<body>
+<div class="mail">
+<h2>Input an email and Submit</h2>
+<form name="form1" action="#"> 
+<ul>
+<h3>Username<li><input type='text' name='text1' id="email"/></li></h3><br>
+<h3>password<li><input type='text' name="text2"id="pass"/></h3></li>
+<li>&nbsp;</li>
+<li class="submit"><input type="submit" name="submit" value="Submit"  onclick=" return validate()"/></li>
+<li>&nbsp;</li>
+</ul>
+</form>
+</div>
+<!-----<script src="email.js"></script>
+<script src="788888.js"></script>---->
+
+
+</body>
+</html>

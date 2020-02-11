@@ -1,0 +1,176 @@
+package com.cts;
+
+import java.util.Scanner;
+
+public class AccountMain {
+
+	public static void main(String[] args) {
+		int MAX=100,objectCount=0;
+		Scanner sc=new Scanner(System.in);
+		Account acc[]=new Account[MAX];
+		
+		do {
+			
+			System.out.println("1.Add New Account");
+			System.out.println("2.Display Account by Id");
+			System.out.println("3.Display Account by Name");
+			System.out.println("4.Display All Account");
+			System.out.println("5.Withdraw");
+			System.out.println("6.Deposit");
+			System.out.println("7.Transfer");
+			System.out.println("8.Exit");
+			
+			System.out.println("Please Enter Your Choice");
+			int choice=sc.nextInt();
+			
+			switch(choice)
+			{
+			case 1: 
+				  acc[objectCount]=new Account();
+				  acc[objectCount].setAccount();
+				  objectCount++;
+				  break;
+			case 2:System.out.println("Enter Account Id To Search");
+			       int accountId=sc.nextInt();
+				   for(int i=0;i<objectCount;i++)
+				   {
+					   Account ac=acc[i].getDetailById(accountId);
+					   if(ac!=null)
+					   {System.out.println("Record Found");
+						   ac.getAccount();
+					   }
+				   }
+				   break;
+				   
+			case 3: System.out.println("Enter The Name to search:");
+			        String name=sc.next();
+			        
+			        for(int i=0;i<objectCount;i++)
+			        {
+			        	Account ac=acc[i].getDetailByName(name);
+			        	
+			        	if(ac!=null)
+			        	{
+			        		System.out.println("Record Found");
+			        		ac.getAccount();
+			        	}
+			        }
+			        break;
+			case 4: for(int i=0;i<objectCount;i++)
+			{
+				acc[i].getAccount();
+			}
+			break;
+			
+			case 5:System.out.println("Enter AccountId:");
+			       int accountid=sc.nextInt();
+				for(int i=0;i<objectCount;i++)
+			{
+				if(acc[i].getDetailById(accountid)!=null)
+				{
+					System.out.println("Enter The Amount to Withdraw");
+					double amt=sc.nextDouble();
+					
+					Account ac=acc[i].withdraw(amt);
+					
+					if(ac==null)
+					{
+						System.out.println("Withdaw Is UnsucessFull");
+						break;
+					}
+					else
+					{
+						ac.getAccount();
+						break;
+					}
+				}
+				else
+				{
+					System.out.println("Plzz Enter Vaild Account Id");
+					break;
+				}
+			}
+				break;
+			case 6:System.out.println("Enter Account Number:");
+			       int accountId1=sc.nextInt();
+			       for(int i=0;i<objectCount;i++)
+			       {
+			    	   if(acc[i].getDetailById(accountId1)!=null)
+			    	   {
+			    		   System.out.println("Enter The Amount To Deposite:");
+			    		   double dep=sc.nextDouble();
+			    		   
+			    		   Account ac= acc[i].deposit(dep);
+			    		   
+			    		   if(ac==null)
+			    		   {
+			    			   System.out.println("Desposit is UnsucessFull..!!");
+			    			   break;
+			    		   }
+			    		   else
+			    		   {
+			    			   ac.getAccount();
+			    			   break;
+			    		   }
+			    	   }
+			    	   else
+			    	   {
+			    		   System.out.println("Plzz Enter vaild Account Id");
+			    		   break;
+			    	   }
+			       }
+			       break;
+			case 7: System.out.println("Enter Your Account number");
+			        int accountId2=sc.nextInt();
+			        for(int i=0;i<objectCount;i++)
+			        {
+			        	if(acc[i].getDetailById(accountId2)!=null)
+			        	{
+			        		System.out.println("Enter The Reciver Account Id:");
+			        		int accountId3=sc.nextInt();
+			        		
+			        		for(int j=0;j<objectCount;j++)
+			        		{
+			        			if(acc[j].getDetailById(accountId3)!=null)
+			        			{    System.out.println("Enter The Amount to tansfer:");
+			        			      double amount=sc.nextDouble();
+			        			      boolean result=acc[i].transfer(acc[j],amount);
+			        			      
+			        			      if(result)
+			        			      {
+			        			    	  System.out.println("Information After Transfer is:");
+			        			    	  acc[i].getAccount();
+			        			    	  acc[j].getAccount();
+			        			    	  break;
+			        			      }
+			        			      else
+			        			      {
+			        			    	System.out.println("Transfer unsucessFull");
+			        			    	break;
+			        			      }
+			        			      
+			        			}
+			        		}
+			        	
+			        	}
+			        	break;
+			        }
+			        break;
+			case 8:
+				System.out.println("Exit SucessFully");
+				return;
+			
+				
+			}
+			
+		}while(true);
+
+	}
+
+}
+
+
+
+
+
+

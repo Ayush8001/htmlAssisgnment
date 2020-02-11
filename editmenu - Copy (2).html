@@ -1,0 +1,76 @@
+<html>
+<head>
+<style type="text/css">
+*{
+margin:0px;
+padding:0px;
+}
+header{
+background-color:#2B547E; height:100px;}
+div {
+background-color:White; height:50px;}
+footer{
+background-color:Gray; height: 30px;color:white; margin-top:150px;
+}
+</style>
+
+<script type="text/javascript" src="validationmenu.js"></script>
+</head>
+<body>
+<header>
+
+<h1 style=" margin-left:25px;margin-top :10px; color:white">truYum<img src="C:\Users\adm\Desktop\img.jpg"  width="50" height="50"  style="margin-top:20px"><a style=" color:white;margin-top:45px; float: right;margin-right:15px; font-size:20px" href=""><span>Menu</span></a></h1>
+
+</header>
+<div>
+<h2 style=" margin-left:100px;margin-top :40px">Edit Menu Items</h2>
+
+</div>
+
+<form name="myform" method="post" onsubmit="return validation()"  id="edit-form">
+  <table style="width:85%; text-align:left; margin-left:100px">
+  <tr>
+    <th><b>Name</b></th>
+    </tr>
+  <tr style="text-align:left">
+    <td><input type="text" name="name" value="" size="157" id="name"></td>
+
+  </tr>
+
+
+  </table>
+  <table style="width:85%; text-align:left; margin-left:100px">
+  <tr>
+    <th><b>Price</b></th>
+    <th><b>Active</b></th>
+    <th><b>Date of launch</b></th>
+    <th><b>Category</b></th>
+    </tr><br>
+    <br>
+  <tr style="text-align:left">
+    <td><input type="text" name="price" value="" size="8 "></td>
+    <td><input type="radio" name="status" value="yes" checked">Yes
+  <input type="radio" name="status" value="no">No</td>
+  <td><input type="text" name="date" value="" size=18></td>
+  <td> <select name="food" style="margin-left:0px;">
+ <option value="Main course">Main Course</option>
+  <option value="Starters">Starters</option>
+  <option value="desserts">Deserts</option>
+  <option value="drinks">Drinks</option>
+  </Select></td>
+
+  </tr>
+  </table>
+  <br>
+  <br><br>
+   <input type="checkbox" name="Service" value="Free" checked style="margin-left:100px;"> Free Delivery
+  <br><br>
+   <input type="submit" value="Save" style="margin-left:100px; height:50px; width:150px;background-color:#2B547E; color:white">
+</form>
+
+
+<footer>
+<p>COPYRIGHT2019</p>
+</footer>
+</body>
+</html>

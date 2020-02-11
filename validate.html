@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<link rel='stylesheet' href='fstyle.css' type='text/css' />
+<script type="text/javascript">
+function myvalidate()
+{
+var email=document.getElementById("email").value;
+var password=document.getElementById("password").value;
+var password2=document.getElementById("password2").value;
+var at=email.indexOf('@');
+var dot=email.lastIndexOf('.');
+var text=/^[a-zA-z]+$/;
+var num=/[0-9]/;
+var lower=/[a-z]/;
+var upper=/[A-Z]/;
+var special=/[!\@\#\$\^\&\*]/;
+if((email==null)||(email=="")){
+alert('email cannot be null');
+return false;
+}
+
+if(at<=1){
+alert('@ cannot add at first position');
+return false;
+}
+
+if(dot>email.length-3){
+alert('dot not properly placed');
+return false;
+}
+
+if((dot-at)<3){
+alert('maintain prper gap');
+return false;
+}
+
+if(!(email.substring((email.length-3),(email.length))=='com')){
+alert('com doesnot matched');
+return false;
+}
+
+if(password.length<4){
+alert('password should be min of 4 char');
+return false;
+}
+
+if(password.search(num)==-1){
+alert('no not found');
+return false;
+}
+
+if(password.search(upper)==-1){
+alert('upper not found');
+return false;
+}
+
+if(password.search(lower)==-1){
+alert('lower not found');
+return false;
+}
+
+if(password.search(special)==-1){
+alert('special not found');
+return false;
+}
+ 
+if(password2!=password){
+alert('password doesnot match');
+return false;
+}
+
+}
+
+</script>
+
+<body>
+<div class="asd">
+<form  action="submit" method ="post" onsubmit="return myvalidate()">
+	<label>Email</label>
+	<input type="text" name="email" id="email"><br><br>
+	<label>Password</label>
+	<input type="password" id="password"><br><br>
+	<label>Confrim Password</label>
+	<input type="password" id="password2"><br><br>
+	<label>gender<b></label>
+	
+	<input type="radio" value="xyz"name="gender">male
+	<input type="radio" value="xyz"name="gender">female<br><br>
+	<label>area<b></b></label>
+	<select>
+	
+	<option selected>select</option>
+	<option>pakistan</option>
+	<option>africa</option>
+	<option>INDIA</option>
+	<option>kharadi</option>
+	</select><br><br>
+<label>intrst<b></b></label>	<br>
+	<input type="checkbox" name="vehicle1" value="Bike"> I have a bike<br>
+  <input type="checkbox" name="vehicle2" value="Car"> I have a car<br>
+  <input type="checkbox" name="vehicle3" value="Boat" > I have a boat<br><br>
+	
+	
+	
+	<input class="submit" type="submit" name="" value="submit" onclick="return myvalidate()">
+	</form>
+	</div>
+	</body>
+	</html>
